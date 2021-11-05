@@ -1,0 +1,121 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>BatoiPOP Homepage</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" />
+  <!-- Bootstrap icons-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container px-4 px-lg-5">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+          class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" id='verCoches' href="#!">Ver Coches</a>
+          </li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" id='nuevoCoche' href="#!">Nuevo coche</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <button class="btn btn-outline-dark" type="submit">
+            <i class="bi bi-person"></i>
+            Login
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  <!-- Header-->
+  <header class="bg-dark py-1">
+    <div class="container px-4 px-lg-5 my-5">
+      <div class="text-center text-white">
+        <h1 class="display-4 fw-bolder">Batoi POP</h1>
+        <p class="lead fw-normal text-white-50 mb-0">La teu tenda de segona ma</p>
+      </div>
+    </div>
+  </header>
+  <!-- Section-->
+  <section id="productsSection" class="py-5">
+    <div class="container px-4 px-lg-5 mt-5">
+      <div id="products" class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <!-- Aquí los productos -->
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <form id='formulario' style="display: none" novalidate>
+      <div class="form-group">
+        <label for="name">Modelo</label>
+        <input type="text" class="form-control" id="name" required minlength="10" maxlength="30">
+      </div>
+      <div class="form-group">
+        <label for="original_price">Precio original</label>
+        <input type="number" class="form-control" id="original_price" required min="0" step=".01">
+      </div>
+      <div class="form-group">
+        <label for="discount_price">Precio con descuento</label>
+        <input type="number" class="form-control" id="discount_price" min="0" step=".01">
+      </div>
+      <div class="form-group">
+        <label for="stars">Estrellas(1-5)</label>
+        <input type="number" class="form-control" id="stars" min="1" max="5">
+      </div>
+      <div class="form-group">
+        <label for="photo">Imagen</label>
+        <input type="file" class="form-control" id="photo" accept=".jpg, .png, .jpeg, .webp">
+      </div>
+      <div class="form-group">
+        <label for="fuel">Combustible</label>
+        <select name="fuel" id="fuel" form="fuelForm">
+          
+        </select>
+      </div>
+      <div class="form-group" id="radioButtonDiv">
+        ¿El cambio de marchas es manual?
+        <input type='radio' id='myradio_si' name='radiobutton' value='si' required />Si
+        <input type='radio' id='myradio_no' name='radiobutton' value='no' />No
+      </div>
+      <div class="form-group">
+        <label for="km">Kilometros</label>
+        <input type="number" class="form-control" id="km" required min="0">
+      </div>
+      <div>
+        Acepto las condiciones de servicio
+        <input type="checkbox" id="check" required>
+      </div><br>
+
+      <button type="submit" class="btn btn-primary" id="botonCrear" >Crear</button>
+    </form>
+
+  <!-- Footer-->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Batoi Website 2021</p>
+    </div>
+  </footer>
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="src/index.js"></script>
+</body>
+
+</html>

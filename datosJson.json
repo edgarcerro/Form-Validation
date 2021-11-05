@@ -1,0 +1,135 @@
+{
+    "products": [
+        {
+            "name": "Dacia Logan",
+            "km": 97000,
+            "original_price": 3890,
+            "discount_price": 3500,
+            "stars": 4,
+            "sale": true,
+            "fuel": 1,
+            "manual_gear": true,
+            "img": "i2191924230.webp"
+        },
+        {
+            "name": "Mazda 3",
+            "km": 212000,
+            "original_price": 3200,
+            "sale": false,
+            "fuel": 1,
+            "manual_gear": false,
+            "img": "i2191924288.webp"
+        },
+        {
+            "name": "Opel Vivaro",
+            "km": 130000,
+            "original_price": 12000,
+            "discount_price": 10900,
+            "stars": 5,
+            "sale": false,
+            "fuel": 2,
+            "manual_gear": true,
+            "img": "i2191919812.webp"
+        },
+        {
+            "name": "BMW Serie 3",
+            "km": 67000,
+            "original_price": 18000,
+            "stars": 4,
+            "sale": false,
+            "fuel": 4,
+            "manual_gear": true,
+            "img": "i2191919834.webp"
+        },
+        {
+            "name": "Dacia Sandero Stepway",
+            "km": 47000,
+            "original_price": 8000,
+            "stars": 4,
+            "sale": false,
+            "fuel": 3,
+            "manual_gear": true,
+            "img": "i2180201519.webp"
+        },
+        {
+            "name": "Volswagen Golf",
+            "km": 97000,
+            "original_price": 4500,
+            "stars": 3,
+            "sale": false,
+            "fuel": 2,
+            "manual_gear": true,
+            "img": "i2191932425.webp"
+        },
+        {
+            "name": "Seat Ibiza",
+            "km": 297000,
+            "original_price": 2380,
+            "discount_price": 2100,
+            "stars": 3,
+            "sale": false,
+            "fuel": 1,
+            "manual_gear": true,
+            "img": "i2191926939.webp"
+        },
+        {
+            "name": "Audi A3",
+            "km": 97000,
+            "original_price": 13890,
+            "discount_price": 13500,
+            "stars": 2,
+            "sale": false,
+            "fuel": 2,
+            "manual_gear": true,
+            "img": "i2191934823.webp"
+        },
+        {
+            "name": "BMW X6",
+            "km": 117000,
+            "original_price": 38900,
+            "stars": 4,
+            "sale": false,
+            "fuel": 2,
+            "manual_gear": false,
+            "img": "i2191923503.webp"
+        },
+        {
+            "name": "Nissan Patrol",
+            "km": 297000,
+            "original_price": 5890,
+            "discount_price": 5500,
+            "sale": false,
+            "fuel": 2,
+            "manual_gear": true,
+            "img": "i2191932581.webp"
+        },
+        {
+            "name": "Peugeot 308",
+            "km": 130000,
+            "original_price": 3100,
+            "discount_price": 2999,
+            "stars": 4,
+            "sale": false,
+            "fuel": 1,
+            "manual_gear": true,
+            "img": "i2191924696.webp"
+        },
+        {
+            "name": "Porsche Booxter S",
+            "km": 147000,
+            "original_price": 16500,
+            "sale": false,
+            "fuel": 1,
+            "manual_gear": true,
+            "img": "i2191920704.webp"
+        }
+    ],
+    "typesOfFuel": [
+    { "id": 1, "fuel": "Gasolina"},
+    { "id": 2, "fuel": "Gasoil"},
+    { "id": 3, "fuel": "GLP"},
+    { "id": 4, "fuel": "Híbrido"},
+    { "id": 5, "fuel": "Eléctrico"},
+    { "id": 6, "fuel": "Flintstones"}
+]
+}

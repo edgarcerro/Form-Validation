@@ -4,8 +4,6 @@ let products = []
 let typesOfFuel = []
 
 
-
-
 window.onload = function () {
     getFuel()
     getProducts()
@@ -21,12 +19,10 @@ window.onload = function () {
 
 }
 
-
-
 function _setListeners() {
     const newCarForm = document.getElementById('formulario')
-        
-    
+
+
     newCarForm.addEventListener('submit', (event) => {
         event.preventDefault()
 
@@ -43,8 +39,8 @@ function _setListeners() {
                 img: document.getElementById("photo").value,
             }
             createCar(newCar)
-            
         }
+
         const nameInput = document.getElementById('name')
         const originalInput = document.getElementById('original_price')
         const discountInput = document.getElementById('discount_price')
@@ -52,76 +48,129 @@ function _setListeners() {
         const photoInput = document.getElementById('photo')
         const radioInput = document.getElementById('myradio_si')
         const kmInput = document.getElementById('km')
-        const checkInput = document.getElementById('check')            
-        
+        const checkInput = document.getElementById('check')
+
         if (!nameInput.checkValidity()) {
 
             if (nameInput.validity.valueMissing) {
                 nameInput.setCustomValidity('Este campo es obligatorio');
                 renderError(nameInput)
             } else if (nameInput.validity.tooShort) {
-                nameInput.setCustomValidity('Este campo debe tener mas de 10 caracteres, has introducido '+nameInput.value.length);
+                nameInput.setCustomValidity('Este campo debe tener mas de 10 caracteres, has introducido ' + nameInput.value.length);
                 renderError(nameInput)
             } else if (nameInput.validity.tooLong) {
-                nameInput.setCustomValidity('Este campo debe tener menos de 30 caracteres, has introducido '+nameInput.value.length);
+                nameInput.setCustomValidity('Este campo debe tener menos de 30 caracteres, has introducido ' + nameInput.value.length);
                 renderError(nameInput)
+            } else {
+                let span = nameInput.parentElement.getElementsByTagName('span')[0]
+                if (span) {
+                    span.parentElement.removeChild(span)
+                }
             }
         }
-        
+
         if (!originalInput.checkValidity()) {
             if (originalInput.validity.valueMissing) {
                 originalInput.setCustomValidity('Este campo es obligatorio');
+                renderError(originalInput)
+
             } else if (originalInput.validity.rangeUnderflow) {
-                originalInput.setCustomValidity('Este campo debe ser al menos 0, has introducido '+originalInput.value);
+                originalInput.setCustomValidity('Este campo debe ser al menos 0, has introducido ' + originalInput.value);
+                renderError(originalInput)
+
             } else if (originalInput.validity.stepMismatch) {
-                originalInput.setCustomValidity('Este campo debe tener 2 decimales como maximo, has introducido '+originalInput.value)
+                originalInput.setCustomValidity('Este campo debe tener 2 decimales como maximo, has introducido ' + originalInput.value)
+                renderError(originalInput)
+            } else {
+                let span = originalInput.parentElement.getElementsByTagName('span')[0]
+                if (span) {
+                    span.parentElement.removeChild(span)
+                }
             }
-            renderError(originalInput)
         }
+
         if (!discountInput.checkValidity()) {
             if (discountInput.validity.rangeUnderflow) {
-                discountInput.setCustomValidity('Este campo debe ser al menos 0, has introducido '+discountInput.value);
+                discountInput.setCustomValidity('Este campo debe ser al menos 0, has introducido ' + discountInput.value)
+                renderError(discountInput)
             } else if (discountInput.validity.stepMismatch) {
-                discountInput.setCustomValidity('Este campo debe tener 2 decimales como maximo, has introducido '+discountInput.value);
+                discountInput.setCustomValidity('Este campo debe tener 2 decimales como maximo, has introducido ' + discountInput.value)
+                renderError(discountInput)
+            } else {
+                let span = discountInput.parentElement.getElementsByTagName('span')[0]
+                if (span) {
+                    span.parentElement.removeChild(span)
+                }
             }
-            renderError(discountInput)
         }
+
         if (!starsInput.checkValidity()) {
             if (starsInput.validity.rangeUnderflow) {
-                starsInput.setCustomValidity('Este campo debe ser al menos 0, has introducido '+starsInput.value);
+                starsInput.setCustomValidity('Este campo debe ser al menos 0, has introducido ' + starsInput.value)
+                renderError(starsInput)
             } else if (starsInput.validity.rangeOverflow) {
-                starsInput.setCustomValidity('Este campo debe ser 5 como maximo has introducido '+discountInput.value);
+                starsInput.setCustomValidity('Este campo debe ser 5 como maximo has introducido ' + discountInput.value)
+                renderError(starsInput)
+            } else {
+                let span = starsInput.parentElement.getElementsByTagName('span')[0]
+                if (span) {
+                    span.parentElement.removeChild(span)
+                }
             }
-            renderError(starsInput)
         }
+
         if (!photoInput.checkValidity()) {
             if (photoInput.validity.typeMismatch) {
                 photoInput.setCustomValidity('Debes introducir un fichero');
+                renderError(photoInput)
             } else if (photoInput.validity.valid) {
                 photoInput.setCustomValidity('Debes introducir archivos .jpg, .png, .jpeg, o .webp');
+                renderError(photoInput)
+            } else {
+                let span = photoInput.parentElement.getElementsByTagName('span')[0]
+                if (span) {
+                    span.parentElement.removeChild(span)
+                }
             }
-            renderError(photoInput)
         }
+
         if (!radioInput.checkValidity()) {
             if (radioInput.validity.valueMissing) {
-                radioInput.setCustomValidity('Este campo es obligatorio');
+                radioInput.setCustomValidity('Este campo es obligatorio')
+                renderError(radioInput)
+            } else {
+                let span = radioInput.parentElement.getElementsByTagName('span')[0]
+                if (span) {
+                    span.parentElement.removeChild(span)
+                }
             }
-            renderError(radioInput)
         }
+
         if (!kmInput.checkValidity()) {
             if (kmInput.validity.valueMissing) {
-                kmInput.setCustomValidity('Este campo es obligatorio');
+                kmInput.setCustomValidity('Este campo es obligatorio')
+                renderError(kmInput)
+            } else {
+                let span = kmInput.parentElement.getElementsByTagName('span')[0]
+                if (span) {
+                    span.parentElement.removeChild(span)
+                }
             }
-            renderError(kmInput)
         }
+
         if (!checkInput.checkValidity()) {
             if (checkInput.validity.valueMissing) {
-                checkInput.setCustomValidity('Este campo es obligatorio');
+                checkInput.setCustomValidity('Este campo es obligatorio')
+                renderError(checkInput)
+            } else {
+                let span = checkInput.parentElement.getElementsByTagName('span')[0]
+                if (span) {
+                    span.parentElement.removeChild(span)
+                }
             }
-            renderError(checkInput)
         }
     })
-    
+
 }
 
 function renderError(input) {
@@ -253,10 +302,8 @@ function createCar(newCar) {
     const peticion = new XMLHttpRequest();
     peticion.open('POST', SERVER + '/products');
     peticion.setRequestHeader('Content-type', 'application/json');
-    peticion.send(JSON.stringify(newCar));              
+    peticion.send(JSON.stringify(newCar));
     peticion.addEventListener('load', function () {
         renderProduct(newCar)
     })
-
-
 }
